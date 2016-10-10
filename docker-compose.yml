@@ -1,0 +1,24 @@
+version: '2'
+services:
+ mongodb:
+   image: mongo:3.3   
+   expose:                 
+     - "27017"
+#   volumes:
+#    - /mnt/db:/data/db
+   environment:    
+    MONGODB_DATABASE: rsvpdata
+   networks:
+    - rsvpnet
+
+ web:
+   image: teamcloudyuga/rsvpapp
+   ports:
+    - "5000:5000"
+   environment:
+    MONGODB_HOST: mongodb
+   networks:
+    - rsvpnet
+
+networks:
+  rsvpnet:
