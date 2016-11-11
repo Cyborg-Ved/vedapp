@@ -17,6 +17,11 @@ services:
     - "5000:5000"
    environment:
     MONGODB_HOST: mongodb
+    LINK: http://www.meetup.com/cloudyuga/
+    TEXT1: CloudYuga 
+    TEXT2: Garage RSVP!
+    LOGO: https://www.cloudbees.com/jenkins/juc-2015/images/JUC-logo.png
+    COMPANY: CloudYuga Technology Pvt. Ltd.
    networks:
     - rsvpnet
 
